@@ -13,6 +13,9 @@
         - mongo
       ports:
         - "8080:8080"
+      profiles: # -> "docker-compose --profile=app up" (sadece bu komutta aşağıdaki image çalışır.)
+        #ayrıca "docker-compose --profile=app" down şeklinde down edilmelidir.
+        - app
       environment:
         spring.data.mongodb.uri: "mongodb://job_user:job_password@mongo:27017/job"
 
